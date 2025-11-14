@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sameness - Project Detail</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Roboto+Mono:wght@300;400;500&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        :root {
+            --primary-color: #6366f1;
+            --secondary-color: #8b5cf6;
+            --accent-color: #06b6d4;
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --elegant-glow: 0 0 15px rgba(99, 102, 241, 0.3), 0 0 30px rgba(99, 102, 241, 0.15);
+            --font-base: 'Poppins', sans-serif;
+            --font-header: 'Orbitron', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(to bottom, #0f172a, #1e293b);
+            color: #e2e8f0;
+            font-family: var(--font-base);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: var(--font-header);
+            color: var(--accent-color);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            line-height: 1.3;
+        }
+        
+        h1 {
+            font-size: clamp(1.75rem, 4vw, 2.5rem);
+            margin-bottom: 1.5rem;
+        }
+        
+        h2 {
+            font-size: clamp(1.5rem, 3.5vw, 2rem);
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        h3 {
+            font-size: clamp(1.25rem, 3vw, 1.5rem);
+            margin-top: 1.5rem;
+        }
+        
+        p {
+            font-size: clamp(0.9rem, 2vw, 1rem);
+            line-height: 1.6;
+        }
+
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--secondary-color);
+        }
+
+        .glass-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            border-radius: 15px;
+            padding: clamp(1rem, 3vw, 2rem);
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-neon {
+            background: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            text-shadow: 0 0 10px rgba(99, 102, 241, 0.5);
+            box-shadow: 0 0 20px rgba(99, 102, 241, 0.2);
+            padding: 0.75rem 1.5rem;
+            min-height: 48px;
+            min-width: 120px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .btn-neon:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: scale(1.05);
+            box-shadow: var(--elegant-glow);
+        }
+
+        /* Navigation */
+        .navbar {
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--glass-border);
+            padding: 1rem 0;
+        }
+        
+        .navbar-brand {
+            font-size: clamp(1rem, 2.5vw, 1.25rem);
+            padding: 0.5rem 1rem;
+            min-height: 44px;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        /* For a more detailed project page, consider a wider layout */
+        .container {
+            max-width: 960px;
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+
+        /* Image styling */
+        .img-fluid.rounded {
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+            width: 100%;
+            height: auto;
+        }
+
+        /* List Styling */
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        li {
+            margin-bottom: 0.75rem;
+            font-size: clamp(0.9rem, 2vw, 1rem);
+            line-height: 1.6;
+        }
+        
+        li strong {
+            color: var(--accent-color);
+        }
+
+        /* Responsive adjustments */
+        
+        /* Tablets and below */
+        @media (max-width: 992px) {
+            .container {
+                padding-left: 1.5rem;
+                padding-right: 1.5rem;
+            }
+        }
+        
+        /* Mobile devices */
+        @media (max-width: 768px) {
+            body {
+                padding-top: 60px;
+            }
+            
+            .container {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+
+            .glass-card {
+                padding: 1.5rem 1rem;
+            }
+            
+            .row {
+                margin-left: 0;
+                margin-right: 0;
+            }
+            
+            .col-md-8, .col-md-4 {
+                padding-left: 0;
+                padding-right: 0;
+                margin-bottom: 2rem;
+            }
+            
+            h1 {
+                font-size: 1.75rem;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+                margin-top: 1.5rem;
+            }
+            
+            h3 {
+                font-size: 1.25rem;
+                margin-top: 1rem;
+            }
+            
+            .btn-neon {
+                width: 100%;
+                max-width: 100%;
+            }
+        }
+        
+        /* Small phones */
+        @media (max-width: 480px) {
+            .container {
+                padding-left: 0.75rem;
+                padding-right: 0.75rem;
+            }
+            
+            .glass-card {
+                padding: 1rem 0.75rem;
+                border-radius: 10px;
+            }
+            
+            h1 {
+                font-size: 1.5rem;
+                letter-spacing: 0.03em;
+            }
+            
+            h2 {
+                font-size: 1.25rem;
+            }
+            
+            .btn-neon {
+                padding: 0.6rem 1rem;
+                font-size: 0.85rem;
+            }
+        }
+        
+        /* Touch device optimizations */
+        @media (hover: none) and (pointer: coarse) {
+            .btn-neon:hover {
+                transform: none;
+            }
+            
+            .btn-neon:active {
+                transform: scale(0.97);
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Navigation (Simplified for Project Page) -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">Back to Portfolio</a>
+        </div>
+    </nav>
+
+    <div class="container py-5">
+        <div class="glass-card">
+            <h1 class="mb-4">Sameness</h1>
+
+            <div class="row">
+                <div class="col-md-8">
+                    <img src="../images/sameness.jpg" alt="Sameness Performance" class="img-fluid rounded mb-4">
+
+                    <h2>Performance Overview</h2>
+                    <p>
+                        <strong>"Sameness"</strong> was a contemporary dance performance presented by the <strong>University of the Visual and Performing Arts</strong> in 2023. As an ensemble member of this production, the opportunity to contribute to this choreographed work explored themes of identity, conformity, and individuality through the expressive language of contemporary movement.
+                    </p>
+
+                    <h2>Thematic Exploration</h2>
+                    <p>
+                        The title "Sameness" suggests an exploration of uniformity, repetition, and the tension between collective identity and individual expression. The choreography likely addressed questions such as:
+                    </p>
+                    <ul>
+                        <li>• How do we balance conformity with personal identity?</li>
+                        <li>• What happens when individuality merges into collective movement?</li>
+                        <li>• Where do we find uniqueness within similarity?</li>
+                        <li>• How does repetition reveal both unity and isolation?</li>
+                        <li>• What is lost and gained in shared experience?</li>
+                    </ul>
+
+                    <h2>Contemporary Dance Context</h2>
+                    <p>
+                        Contemporary dance provides an ideal medium for exploring complex themes like sameness and difference. The movement vocabulary allows for:
+                    </p>
+                    <ul>
+                        <li>• Abstract representation of philosophical concepts</li>
+                        <li>• Physical exploration of emotional and social dynamics</li>
+                        <li>• Ensemble work that highlights both unity and individuality</li>
+                        <li>• Freedom of movement outside classical constraints</li>
+                        <li>• Innovative choreographic approaches to storytelling</li>
+                    </ul>
+
+                    <h2>Ensemble Performance</h2>
+                    <p>
+                        As an ensemble member, the role required working collaboratively within a group while maintaining individual artistic presence. This type of performance demands:
+                    </p>
+                    <ul>
+                        <li>• <strong>Group Synchronization:</strong> Moving in unison with other dancers</li>
+                        <li>• <strong>Spatial Awareness:</strong> Understanding one's position within the group</li>
+                        <li>• <strong>Artistic Sensitivity:</strong> Responding to other dancers' energy</li>
+                        <li>• <strong>Technical Consistency:</strong> Maintaining quality within ensemble work</li>
+                        <li>• <strong>Collaborative Spirit:</strong> Supporting the collective vision</li>
+                    </ul>
+
+                    <h2>University Production Context</h2>
+                    <p>
+                        Being part of a production at the University of the Visual and Performing Arts provided valuable experience within an academic artistic environment. University productions offer:
+                    </p>
+                    <ul>
+                        <li>• Access to professional-level facilities and resources</li>
+                        <li>• Collaboration with fellow students and faculty</li>
+                        <li>• Opportunity to work on original choreography</li>
+                        <li>• Experience in full theatrical productions</li>
+                        <li>• Development of performance skills in supportive setting</li>
+                    </ul>
+
+                    <h2>Artistic Development</h2>
+                    <p>
+                        Participating in "Sameness" contributed to growth as a contemporary dancer and ensemble performer. The experience developed:
+                    </p>
+                    <ul>
+                        <li>• Contemporary movement skills and vocabulary</li>
+                        <li>• Ability to work within choreographic structures</li>
+                        <li>• Understanding of thematic performance work</li>
+                        <li>• Ensemble performance capabilities</li>
+                        <li>• Experience in academic dance productions</li>
+                        <li>• Collaborative and creative process skills</li>
+                    </ul>
+
+                    <h2>Performance Experience</h2>
+                    <p>
+                        The experience of performing "Sameness" as part of the ensemble provided important stage time and performance practice in contemporary dance. University productions like this serve as crucial stepping stones in developing performance confidence, understanding choreographic intent, and learning to contribute effectively to group works while maintaining artistic integrity.
+                    </p>
+
+                    <h2>Contribution to Portfolio</h2>
+                    <p>
+                        "Sameness" represents early involvement in contemporary dance performance work at the university level. This 2023 production laid groundwork for later contemporary performances such as "Wings of Ruin" (2025), demonstrating progression and continued commitment to contemporary dance as an artistic practice alongside classical ballet training.
+                    </p>
+
+                </div>
+                <div class="col-md-4">
+                    <h2>Production Details</h2>
+                    <ul>
+                        <li><strong>Year:</strong> 2023</li>
+                        <li><strong>Production:</strong> Sameness</li>
+                        <li><strong>Venue:</strong> University of the Visual and Performing Arts</li>
+                        <li><strong>Genre:</strong> Contemporary Dance</li>
+                        <li><strong>Role:</strong> Ensemble Member</li>
+                        <li><strong>Format:</strong> Group Performance</li>
+                    </ul>
+
+                    <h3 class="mt-4">Performance Elements</h3>
+                    <ul>
+                        <li>• Contemporary Movement</li>
+                        <li>• Ensemble Choreography</li>
+                        <li>• Thematic Performance</li>
+                        <li>• Group Synchronization</li>
+                        <li>• Theatrical Expression</li>
+                    </ul>
+
+                    <h3 class="mt-4">Skills Demonstrated</h3>
+                    <ul>
+                        <li>• Contemporary Dance</li>
+                        <li>• Ensemble Performance</li>
+                        <li>• Collaborative Work</li>
+                        <li>• Spatial Awareness</li>
+                        <li>• Artistic Interpretation</li>
+                        <li>• Stage Presence</li>
+                    </ul>
+
+                    <h3 class="mt-4">Key Themes</h3>
+                    <ul>
+                        <li>• Identity & Conformity</li>
+                        <li>• Individuality vs. Unity</li>
+                        <li>• Repetition & Variation</li>
+                        <li>• Collective Experience</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS (Optional if you only need basic layout) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

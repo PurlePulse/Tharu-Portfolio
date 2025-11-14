@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>No Name - Project Detail</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Roboto+Mono:wght@300;400;500&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        :root {
+            --primary-color: #6366f1;
+            --secondary-color: #8b5cf6;
+            --accent-color: #06b6d4;
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --elegant-glow: 0 0 15px rgba(99, 102, 241, 0.3), 0 0 30px rgba(99, 102, 241, 0.15);
+            --font-base: 'Poppins', sans-serif;
+            --font-header: 'Orbitron', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(to bottom, #0f172a, #1e293b);
+            color: #e2e8f0;
+            font-family: var(--font-base);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: var(--font-header);
+            color: var(--accent-color);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            line-height: 1.3;
+        }
+        
+        h1 {
+            font-size: clamp(1.75rem, 4vw, 2.5rem);
+            margin-bottom: 1.5rem;
+        }
+        
+        h2 {
+            font-size: clamp(1.5rem, 3.5vw, 2rem);
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        h3 {
+            font-size: clamp(1.25rem, 3vw, 1.5rem);
+            margin-top: 1.5rem;
+        }
+        
+        p {
+            font-size: clamp(0.9rem, 2vw, 1rem);
+            line-height: 1.6;
+        }
+
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--secondary-color);
+        }
+
+        .glass-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            border-radius: 15px;
+            padding: clamp(1rem, 3vw, 2rem);
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-neon {
+            background: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            text-shadow: 0 0 10px rgba(99, 102, 241, 0.5);
+            box-shadow: 0 0 20px rgba(99, 102, 241, 0.2);
+            padding: 0.75rem 1.5rem;
+            min-height: 48px;
+            min-width: 120px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .btn-neon:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: scale(1.05);
+            box-shadow: var(--elegant-glow);
+        }
+
+        /* Navigation */
+        .navbar {
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--glass-border);
+            padding: 1rem 0;
+        }
+        
+        .navbar-brand {
+            font-size: clamp(1rem, 2.5vw, 1.25rem);
+            padding: 0.5rem 1rem;
+            min-height: 44px;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        /* For a more detailed project page, consider a wider layout */
+        .container {
+            max-width: 960px;
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+
+        /* Image styling */
+        .img-fluid.rounded {
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+            width: 100%;
+            height: auto;
+        }
+
+        /* List Styling */
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        li {
+            margin-bottom: 0.75rem;
+            font-size: clamp(0.9rem, 2vw, 1rem);
+            line-height: 1.6;
+        }
+        
+        li strong {
+            color: var(--accent-color);
+        }
+
+        /* Responsive adjustments */
+        
+        /* Tablets and below */
+        @media (max-width: 992px) {
+            .container {
+                padding-left: 1.5rem;
+                padding-right: 1.5rem;
+            }
+        }
+        
+        /* Mobile devices */
+        @media (max-width: 768px) {
+            body {
+                padding-top: 60px;
+            }
+            
+            .container {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+
+            .glass-card {
+                padding: 1.5rem 1rem;
+            }
+            
+            .row {
+                margin-left: 0;
+                margin-right: 0;
+            }
+            
+            .col-md-8, .col-md-4 {
+                padding-left: 0;
+                padding-right: 0;
+                margin-bottom: 2rem;
+            }
+            
+            h1 {
+                font-size: 1.75rem;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+                margin-top: 1.5rem;
+            }
+            
+            h3 {
+                font-size: 1.25rem;
+                margin-top: 1rem;
+            }
+            
+            .btn-neon {
+                width: 100%;
+                max-width: 100%;
+            }
+        }
+        
+        /* Small phones */
+        @media (max-width: 480px) {
+            .container {
+                padding-left: 0.75rem;
+                padding-right: 0.75rem;
+            }
+            
+            .glass-card {
+                padding: 1rem 0.75rem;
+                border-radius: 10px;
+            }
+            
+            h1 {
+                font-size: 1.5rem;
+                letter-spacing: 0.03em;
+            }
+            
+            h2 {
+                font-size: 1.25rem;
+            }
+            
+            .btn-neon {
+                padding: 0.6rem 1rem;
+                font-size: 0.85rem;
+            }
+        }
+        
+        /* Touch device optimizations */
+        @media (hover: none) and (pointer: coarse) {
+            .btn-neon:hover {
+                transform: none;
+            }
+            
+            .btn-neon:active {
+                transform: scale(0.97);
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Navigation (Simplified for Project Page) -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">Back to Portfolio</a>
+        </div>
+    </nav>
+
+    <div class="container py-5">
+        <div class="glass-card">
+            <h1 class="mb-4">No Name</h1>
+
+            <div class="row">
+                <div class="col-md-8">
+                    <img src="../images/no_name.jpg" alt="No Name Performance" class="img-fluid rounded mb-4">
+
+                    <h2>Performance Overview</h2>
+                    <p>
+                        <strong>"No Name"</strong> was a contemporary dance performance presented by the <strong>University of the Visual and Performing Arts</strong> in 2025. As an ensemble member of this production, participation in this choreographed work explored themes of identity, anonymity, and the power of being unnamed through the expressive language of contemporary movement.
+                    </p>
+
+                    <h2>Thematic Exploration</h2>
+                    <p>
+                        The title "No Name" suggests an exploration of identity, anonymity, and the significance—or insignificance—of naming. The choreography likely addressed concepts such as:
+                    </p>
+                    <ul>
+                        <li>• The relationship between identity and naming</li>
+                        <li>• Anonymity and universality</li>
+                        <li>• Being defined versus being undefined</li>
+                        <li>• The power of the unnamed or unlabeled</li>
+                        <li>• Identity beyond labels and categories</li>
+                        <li>• Collective experience without individual distinction</li>
+                    </ul>
+
+                    <h2>Contemporary Dance Expression</h2>
+                    <p>
+                        Contemporary dance provides a powerful medium for exploring themes of identity and anonymity:
+                    </p>
+                    <ul>
+                        <li>• Movement that can express both individuality and universality</li>
+                        <li>• Ability to explore abstract concepts of identity</li>
+                        <li>• Ensemble work that can show both unity and individual presence</li>
+                        <li>• Freedom to represent the unnamed or undefined</li>
+                        <li>• Physical expression of philosophical questions about identity</li>
+                    </ul>
+
+                    <h2>Ensemble Performance Role</h2>
+                    <p>
+                        As an ensemble member in "No Name," the role required contributing to a collective expression while exploring the tension between individual presence and anonymity. This type of performance demands:
+                    </p>
+                    <ul>
+                        <li>• <strong>Artistic Presence:</strong> Maintaining individual quality within ensemble</li>
+                        <li>• <strong>Collective Unity:</strong> Working as part of an unnamed whole</li>
+                        <li>• <strong>Technical Excellence:</strong> Maintaining quality while exploring anonymity</li>
+                        <li>• <strong>Conceptual Understanding:</strong> Grasping the work's philosophical themes</li>
+                        <li>• <strong>Expressive Range:</strong> Conveying both presence and absence of identity</li>
+                    </ul>
+
+                    <h2>University Production Experience</h2>
+                    <p>
+                        Being part of "No Name" at the University of the Visual and Performing Arts in 2025 represents continued engagement with contemporary dance at the university level. This production, following earlier works like "Sameness" and "Struck" (2023), demonstrates ongoing commitment to contemporary dance performance and continued artistic development.
+                    </p>
+
+                    <h2>Artistic Development</h2>
+                    <p>
+                        Participating in "No Name" contributed to continued growth as a contemporary dancer, particularly in:
+                    </p>
+                    <ul>
+                        <li>• Contemporary movement vocabulary and technique</li>
+                        <li>• Ability to explore abstract and philosophical themes</li>
+                        <li>• Understanding of conceptual contemporary work</li>
+                        <li>• Ensemble performance in thematically complex choreography</li>
+                        <li>• Experience in works that challenge traditional notions of identity</li>
+                        <li>• Development of artistic maturity and interpretive skills</li>
+                    </ul>
+
+                    <h2>Progression in Contemporary Dance</h2>
+                    <p>
+                        "No Name" represents continued progression in contemporary dance work, building upon earlier university productions:
+                    </p>
+                    <ul>
+                        <li>• <strong>2023:</strong> "Sameness" and "Struck" - Early contemporary work</li>
+                        <li>• <strong>2025:</strong> "No Name" and "Wings of Ruin" - Advanced contemporary performances</li>
+                    </ul>
+                    <p>
+                        This progression demonstrates consistent engagement with contemporary dance alongside classical ballet training, showcasing versatility and commitment to multiple dance forms. The experience in "No Name" contributed to the artistic foundation that supported the major production "Wings of Ruin" later in 2025.
+                    </p>
+
+                    <h2>Performance Experience</h2>
+                    <p>
+                        The experience of performing "No Name" as part of the ensemble provided valuable stage experience in contemporary dance, particularly in works that explore complex philosophical themes. University productions like this serve as important platforms for developing performance skills, understanding choreographic intent, and learning to contribute effectively to ensemble works that require both technical skill and conceptual understanding.
+                    </p>
+
+                    <h2>Contribution to Artistic Profile</h2>
+                    <p>
+                        "No Name" adds to a comprehensive dance portfolio that spans classical ballet, contemporary dance, traditional forms, and competitive performance. The experience of working on multiple contemporary productions demonstrates commitment to exploring different choreographic approaches, thematic content, and artistic expressions, building a diverse performance portfolio that showcases versatility, artistic range, and dedication to dance as a multifaceted art form.
+                    </p>
+
+                </div>
+                <div class="col-md-4">
+                    <h2>Production Details</h2>
+                    <ul>
+                        <li><strong>Year:</strong> 2025</li>
+                        <li><strong>Production:</strong> No Name</li>
+                        <li><strong>Venue:</strong> University of the Visual and Performing Arts</li>
+                        <li><strong>Genre:</strong> Contemporary Dance</li>
+                        <li><strong>Role:</strong> Ensemble Member</li>
+                        <li><strong>Format:</strong> Group Performance</li>
+                    </ul>
+
+                    <h3 class="mt-4">Performance Elements</h3>
+                    <ul>
+                        <li>• Contemporary Movement</li>
+                        <li>• Conceptual Choreography</li>
+                        <li>• Thematic Performance</li>
+                        <li>• Ensemble Work</li>
+                        <li>• Identity Exploration</li>
+                    </ul>
+
+                    <h3 class="mt-4">Skills Demonstrated</h3>
+                    <ul>
+                        <li>• Contemporary Dance</li>
+                        <li>• Conceptual Performance</li>
+                        <li>• Ensemble Collaboration</li>
+                        <li>• Artistic Interpretation</li>
+                        <li>• Theatrical Expression</li>
+                        <li>• Philosophical Movement</li>
+                    </ul>
+
+                    <h3 class="mt-4">Key Themes</h3>
+                    <ul>
+                        <li>• Identity & Anonymity</li>
+                        <li>• Naming & Unnaming</li>
+                        <li>• Individual vs. Universal</li>
+                        <li>• Presence & Absence</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS (Optional if you only need basic layout) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

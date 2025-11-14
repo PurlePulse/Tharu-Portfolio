@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Girl with a Pearl Earring - Project Detail</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Roboto+Mono:wght@300;400;500&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        :root {
+            --primary-color: #6366f1;
+            --secondary-color: #8b5cf6;
+            --accent-color: #06b6d4;
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --elegant-glow: 0 0 15px rgba(99, 102, 241, 0.3), 0 0 30px rgba(99, 102, 241, 0.15);
+            --font-base: 'Poppins', sans-serif;
+            --font-header: 'Orbitron', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(to bottom, #0f172a, #1e293b);
+            color: #e2e8f0;
+            font-family: var(--font-base);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: var(--font-header);
+            color: var(--accent-color);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            line-height: 1.3;
+        }
+        
+        h1 {
+            font-size: clamp(1.75rem, 4vw, 2.5rem);
+            margin-bottom: 1.5rem;
+        }
+        
+        h2 {
+            font-size: clamp(1.5rem, 3.5vw, 2rem);
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        h3 {
+            font-size: clamp(1.25rem, 3vw, 1.5rem);
+            margin-top: 1.5rem;
+        }
+        
+        p {
+            font-size: clamp(0.9rem, 2vw, 1rem);
+            line-height: 1.6;
+        }
+
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--secondary-color);
+        }
+
+        .glass-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            border-radius: 15px;
+            padding: clamp(1rem, 3vw, 2rem);
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-neon {
+            background: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            text-shadow: 0 0 10px rgba(99, 102, 241, 0.5);
+            box-shadow: 0 0 20px rgba(99, 102, 241, 0.2);
+            padding: 0.75rem 1.5rem;
+            min-height: 48px;
+            min-width: 120px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .btn-neon:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: scale(1.05);
+            box-shadow: var(--elegant-glow);
+        }
+
+        /* Navigation */
+        .navbar {
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--glass-border);
+            padding: 1rem 0;
+        }
+        
+        .navbar-brand {
+            font-size: clamp(1rem, 2.5vw, 1.25rem);
+            padding: 0.5rem 1rem;
+            min-height: 44px;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        /* For a more detailed project page, consider a wider layout */
+        .container {
+            max-width: 960px;
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+
+        /* Image styling */
+        .img-fluid.rounded {
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+            width: 100%;
+            height: auto;
+        }
+
+        /* List Styling */
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        li {
+            margin-bottom: 0.75rem;
+            font-size: clamp(0.9rem, 2vw, 1rem);
+            line-height: 1.6;
+        }
+        
+        li strong {
+            color: var(--accent-color);
+        }
+
+        /* Responsive adjustments */
+        
+        /* Tablets and below */
+        @media (max-width: 992px) {
+            .container {
+                padding-left: 1.5rem;
+                padding-right: 1.5rem;
+            }
+        }
+        
+        /* Mobile devices */
+        @media (max-width: 768px) {
+            body {
+                padding-top: 60px;
+            }
+            
+            .container {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+
+            .glass-card {
+                padding: 1.5rem 1rem;
+            }
+            
+            .row {
+                margin-left: 0;
+                margin-right: 0;
+            }
+            
+            .col-md-8, .col-md-4 {
+                padding-left: 0;
+                padding-right: 0;
+                margin-bottom: 2rem;
+            }
+            
+            h1 {
+                font-size: 1.75rem;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+                margin-top: 1.5rem;
+            }
+            
+            h3 {
+                font-size: 1.25rem;
+                margin-top: 1rem;
+            }
+            
+            .btn-neon {
+                width: 100%;
+                max-width: 100%;
+            }
+        }
+        
+        /* Small phones */
+        @media (max-width: 480px) {
+            .container {
+                padding-left: 0.75rem;
+                padding-right: 0.75rem;
+            }
+            
+            .glass-card {
+                padding: 1rem 0.75rem;
+                border-radius: 10px;
+            }
+            
+            h1 {
+                font-size: 1.5rem;
+                letter-spacing: 0.03em;
+            }
+            
+            h2 {
+                font-size: 1.25rem;
+            }
+            
+            .btn-neon {
+                padding: 0.6rem 1rem;
+                font-size: 0.85rem;
+            }
+        }
+        
+        /* Touch device optimizations */
+        @media (hover: none) and (pointer: coarse) {
+            .btn-neon:hover {
+                transform: none;
+            }
+            
+            .btn-neon:active {
+                transform: scale(0.97);
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Navigation (Simplified for Project Page) -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">Back to Portfolio</a>
+        </div>
+    </nav>
+
+    <div class="container py-5">
+        <div class="glass-card">
+            <h1 class="mb-4">Girl with a Pearl Earring</h1>
+
+            <div class="row">
+                <div class="col-md-8">
+                    <img src="../images/girl_pearl_earring.jpg" alt="Girl with a Pearl Earring Production" class="img-fluid rounded mb-4">
+
+                    <h2>Production Overview</h2>
+                    <p>
+                        A creative dance-theater production of <strong>"Girl with a Pearl Earring"</strong>, bringing the iconic Vermeer painting to life through movement. This 2024 production uniquely combines <strong>Western classical ballet</strong> with <strong>contemporary dance</strong> techniques to tell the story of the mysterious girl immortalized in one of art history's most beloved masterpieces.
+                    </p>
+
+                    <h2>Artistic Concept</h2>
+                    <p>
+                        The production explores the narrative behind Vermeer's famous 17th-century painting, imagining the life, emotions, and inner world of the enigmatic subject. Through the fusion of classical ballet's refined technique and contemporary dance's expressive freedom, the choreography captures both the timeless elegance of the Dutch Golden Age and the universal human emotions that transcend centuries.
+                    </p>
+
+                    <h2>Choreographic Approach</h2>
+                    <p>
+                        The choreography seamlessly blends two distinct dance vocabularies:
+                    </p>
+                    <ul>
+                        <li>• <strong>Western Classical Ballet:</strong> Used to portray grace, formality, and the classical beauty of the painting</li>
+                        <li>• <strong>Contemporary Dance:</strong> Employed to express inner emotions, modern interpretation, and psychological depth</li>
+                        <li>• Integration of both styles to create a unique movement language</li>
+                        <li>• Narrative storytelling through physical expression</li>
+                        <li>• Visual recreation of the painting's aesthetic through movement</li>
+                    </ul>
+
+                    <h2>Performance and Character</h2>
+                    <p>
+                        Creating this role required embodying the mystery and allure of the girl in the painting while bringing her story to life through dance. The performance explored themes of:
+                    </p>
+                    <ul>
+                        <li>• Identity and self-discovery</li>
+                        <li>• The relationship between artist and muse</li>
+                        <li>• Beauty, mystery, and timelessness</li>
+                        <li>• The intersection of art and life</li>
+                        <li>• Historical context meeting contemporary interpretation</li>
+                    </ul>
+
+                    <h2>Technical and Artistic Demands</h2>
+                    <p>
+                        This production required mastery of multiple dance disciplines and the ability to transition seamlessly between styles. Key technical and artistic challenges included:
+                    </p>
+                    <ul>
+                        <li>• Executing classical ballet technique with precision</li>
+                        <li>• Expressing emotion through contemporary movement</li>
+                        <li>• Maintaining character consistency across style changes</li>
+                        <li>• Creating visual beauty reminiscent of the painting</li>
+                        <li>• Developing narrative clarity through abstract movement</li>
+                        <li>• Balancing technical excellence with emotional authenticity</li>
+                    </ul>
+
+                    <h2>Creative Collaboration</h2>
+                    <p>
+                        Working under direction in this 2024 production involved close collaboration with the creative team to realize their vision for this unique interpretation. The process included developing movement vocabulary, refining character portrayal, and integrating lighting, costume, and staging elements to create a cohesive theatrical experience that honors both the original artwork and contemporary dance-theater aesthetics.
+                    </p>
+
+                    <h2>Artistic Significance</h2>
+                    <p>
+                        This production represents the intersection of multiple art forms—visual art, dance, theater, and music—demonstrating how classical paintings can inspire contemporary performance. The fusion of Western ballet and contemporary dance creates a bridge between historical artistic traditions and modern expression, offering audiences a fresh perspective on a familiar masterpiece.
+                    </p>
+
+                    <h2>Performance Experience</h2>
+                    <p>
+                        Bringing "Girl with a Pearl Earring" to life through dance provided a unique opportunity to explore cross-disciplinary artistry. The experience of embodying this iconic image while telling a story through movement challenged both technical abilities and artistic interpretation skills. This production showcases versatility across dance styles and demonstrates capability in narrative dance-theater performance.
+                    </p>
+
+                </div>
+                <div class="col-md-4">
+                    <h2>Production Details</h2>
+                    <ul>
+                        <li><strong>Year:</strong> 2024</li>
+                        <li><strong>Production:</strong> Girl with a Pearl Earring</li>
+                        <li><strong>Inspiration:</strong> Vermeer's Painting</li>
+                        <li><strong>Genre:</strong> Dance-Theater</li>
+                        <li><strong>Styles:</strong> Western Ballet & Contemporary Dance</li>
+                        <li><strong>Format:</strong> Choreographed Production</li>
+                        <li><strong>Role:</strong> Creative Performance</li>
+                    </ul>
+
+                    <h3 class="mt-4">Dance Styles Featured</h3>
+                    <ul>
+                        <li>• Western Classical Ballet</li>
+                        <li>• Contemporary Dance</li>
+                        <li>• Narrative Movement</li>
+                        <li>• Character Work</li>
+                        <li>• Theatrical Dance</li>
+                    </ul>
+
+                    <h3 class="mt-4">Skills Demonstrated</h3>
+                    <ul>
+                        <li>• Ballet Technique</li>
+                        <li>• Contemporary Movement</li>
+                        <li>• Character Development</li>
+                        <li>• Narrative Performance</li>
+                        <li>• Artistic Interpretation</li>
+                        <li>• Style Integration</li>
+                        <li>• Theatrical Presence</li>
+                    </ul>
+
+                    <h3 class="mt-4">Key Themes</h3>
+                    <ul>
+                        <li>• Art & Identity</li>
+                        <li>• Mystery & Beauty</li>
+                        <li>• Historical Reimagining</li>
+                        <li>• Cross-disciplinary Art</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS (Optional if you only need basic layout) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

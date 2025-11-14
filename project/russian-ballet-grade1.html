@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade 1 Russian Ballet Examination - Project Detail</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Roboto+Mono:wght@300;400;500&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        :root {
+            --primary-color: #6366f1;
+            --secondary-color: #8b5cf6;
+            --accent-color: #06b6d4;
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --elegant-glow: 0 0 15px rgba(99, 102, 241, 0.3), 0 0 30px rgba(99, 102, 241, 0.15);
+            --font-base: 'Poppins', sans-serif;
+            --font-header: 'Orbitron', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(to bottom, #0f172a, #1e293b);
+            color: #e2e8f0;
+            font-family: var(--font-base);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: var(--font-header);
+            color: var(--accent-color);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            line-height: 1.3;
+        }
+        
+        h1 {
+            font-size: clamp(1.75rem, 4vw, 2.5rem);
+            margin-bottom: 1.5rem;
+        }
+        
+        h2 {
+            font-size: clamp(1.5rem, 3.5vw, 2rem);
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        h3 {
+            font-size: clamp(1.25rem, 3vw, 1.5rem);
+            margin-top: 1.5rem;
+        }
+        
+        p {
+            font-size: clamp(0.9rem, 2vw, 1rem);
+            line-height: 1.6;
+        }
+
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--secondary-color);
+        }
+
+        .glass-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            border-radius: 15px;
+            padding: clamp(1rem, 3vw, 2rem);
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-neon {
+            background: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            text-shadow: 0 0 10px rgba(99, 102, 241, 0.5);
+            box-shadow: 0 0 20px rgba(99, 102, 241, 0.2);
+            padding: 0.75rem 1.5rem;
+            min-height: 48px;
+            min-width: 120px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .btn-neon:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: scale(1.05);
+            box-shadow: var(--elegant-glow);
+        }
+
+        /* Navigation */
+        .navbar {
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--glass-border);
+            padding: 1rem 0;
+        }
+        
+        .navbar-brand {
+            font-size: clamp(1rem, 2.5vw, 1.25rem);
+            padding: 0.5rem 1rem;
+            min-height: 44px;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        /* For a more detailed project page, consider a wider layout */
+        .container {
+            max-width: 960px;
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+
+        /* Image styling */
+        .img-fluid.rounded {
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+            width: 100%;
+            height: auto;
+        }
+
+        /* Badge styling */
+        .achievement-badge {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            display: inline-block;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            box-shadow: var(--elegant-glow);
+        }
+
+        .progression-badge {
+            background: linear-gradient(135deg, #f59e0b, #ef4444);
+            color: white;
+            padding: 0.35rem 0.85rem;
+            border-radius: 20px;
+            display: inline-block;
+            font-weight: 600;
+            margin-left: 0.5rem;
+            font-size: 0.85rem;
+        }
+
+        /* List Styling */
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        li {
+            margin-bottom: 0.75rem;
+            font-size: clamp(0.9rem, 2vw, 1rem);
+            line-height: 1.6;
+        }
+        
+        li strong {
+            color: var(--accent-color);
+        }
+
+        /* Responsive adjustments */
+        
+        /* Tablets and below */
+        @media (max-width: 992px) {
+            .container {
+                padding-left: 1.5rem;
+                padding-right: 1.5rem;
+            }
+        }
+        
+        /* Mobile devices */
+        @media (max-width: 768px) {
+            body {
+                padding-top: 60px;
+            }
+            
+            .container {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+
+            .glass-card {
+                padding: 1.5rem 1rem;
+            }
+            
+            .row {
+                margin-left: 0;
+                margin-right: 0;
+            }
+            
+            .col-md-8, .col-md-4 {
+                padding-left: 0;
+                padding-right: 0;
+                margin-bottom: 2rem;
+            }
+            
+            h1 {
+                font-size: 1.75rem;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+                margin-top: 1.5rem;
+            }
+            
+            h3 {
+                font-size: 1.25rem;
+                margin-top: 1rem;
+            }
+            
+            .btn-neon {
+                width: 100%;
+                max-width: 100%;
+            }
+
+            .progression-badge {
+                display: block;
+                margin-left: 0;
+                margin-top: 0.5rem;
+                text-align: center;
+            }
+        }
+        
+        /* Small phones */
+        @media (max-width: 480px) {
+            .container {
+                padding-left: 0.75rem;
+                padding-right: 0.75rem;
+            }
+            
+            .glass-card {
+                padding: 1rem 0.75rem;
+                border-radius: 10px;
+            }
+            
+            h1 {
+                font-size: 1.5rem;
+                letter-spacing: 0.03em;
+            }
+            
+            h2 {
+                font-size: 1.25rem;
+            }
+            
+            .btn-neon {
+                padding: 0.6rem 1rem;
+                font-size: 0.85rem;
+            }
+        }
+        
+        /* Touch device optimizations */
+        @media (hover: none) and (pointer: coarse) {
+            .btn-neon:hover {
+                transform: none;
+            }
+            
+            .btn-neon:active {
+                transform: scale(0.97);
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Navigation (Simplified for Project Page) -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">Back to Portfolio</a>
+        </div>
+    </nav>
+
+    <div class="container py-5">
+        <div class="glass-card">
+            <span class="achievement-badge">✨ Passed with Distinction</span>
+            <span class="progression-badge">🏆 Third Consecutive Distinction</span>
+            <h1 class="mb-4">Grade 1 Russian Ballet Examination</h1>
+
+            <div class="row">
+                <div class="col-md-8">
+                    <img src="../images/russian_ballet_grade1.jpg" alt="Grade 1 Russian Ballet Examination Certificate" class="img-fluid rounded mb-4">
+
+                    <h2>Achievement Overview</h2>
+                    <p>
+                        Successfully passed the <strong>Grade 1 Russian Ballet Dancing Examination</strong> with <strong>distinction</strong>, marking the third consecutive distinction in the Russian ballet system. This examination was conducted by the prestigious <strong>Russian School of Ballet & Dancing (Est. 2001)</strong>, patronaged by <strong>Dr. Oxana Karnovich of the Moscow State Academy of Choreography</strong>, and held at the Russian Center in Colombo in October 2025.
+                    </p>
+                    <p>
+                        The examination was presented for external students by <strong>Mr. Kayan Ruppegoda</strong> from <strong>KBA Ballet Academy - Kurunagala</strong>, under the direction of <strong>Maria Popova</strong>, Director of the Russian Centre in Colombo and First Secretary - Counsellor of the Embassy of the Russian Federation.
+                    </p>
+
+                    <h2>Remarkable Three-Year Progression</h2>
+                    <p>
+                        This Grade 1 distinction represents an exceptional three-year journey of continuous advancement and excellence in Russian classical ballet:
+                    </p>
+                    <ul>
+                        <li>• <strong>2023:</strong> Primary Level - Distinction</li>
+                        <li>• <strong>2024:</strong> Pre Grade Level - Distinction</li>
+                        <li>• <strong>2025:</strong> Grade 1 Level - Distinction</li>
+                    </ul>
+                    <p>
+                        Achieving distinction at each level demonstrates exceptional dedication, consistent technical growth, and unwavering commitment to mastering Russian ballet methodology. This progression showcases not only technical proficiency but also artistic maturity and performance excellence.
+                    </p>
+
+                    <h2>Grade 1 Level Requirements</h2>
+                    <p>
+                        Grade 1 represents entry into the intermediate levels of Russian ballet training, requiring significantly more complex technical skills and artistic sophistication. At this level, students are expected to demonstrate:
+                    </p>
+                    <ul>
+                        <li>• Advanced barre work with increased complexity and coordination</li>
+                        <li>• Sophisticated center combinations requiring greater control</li>
+                        <li>• Multiple pirouettes and complex turning sequences</li>
+                        <li>• Grand allegro with elevation and ballon</li>
+                        <li>• Enhanced musicality and dynamic range</li>
+                        <li>• Refined artistic interpretation and performance quality</li>
+                        <li>• Strong technical foundation for pointe work preparation</li>
+                    </ul>
+
+                    <h2>About Russian Ballet Graded System</h2>
+                    <p>
+                        The Russian ballet training system, established by the Moscow State Academy of Choreography, provides a comprehensive and systematic approach to classical ballet education. Grade 1 marks an important milestone where dancers transition from foundational training to more advanced intermediate work, preparing for the rigorous demands of professional-level technique.
+                    </p>
+
+                    <h2>Training and Preparation</h2>
+                    <p>
+                        Preparation for the Grade 1 examination required intensive daily training, building upon two years of foundational work. The curriculum demanded enhanced physical conditioning, greater artistic sensitivity, and deeper understanding of ballet principles. Training under Mr. Kayan Ruppegoda at KBA Ballet Academy provided expert guidance in the Russian methodology, ensuring technical excellence and artistic development.
+                    </p>
+
+                    <h2>Significance of Third Consecutive Distinction</h2>
+                    <p>
+                        Earning distinction in three consecutive levels of Russian ballet examination is a rare and exceptional achievement. It demonstrates:
+                    </p>
+                    <ul>
+                        <li>• Consistent excellence across multiple years of training</li>
+                        <li>• Strong technical foundation and continuous improvement</li>
+                        <li>• Dedication to the demanding Russian ballet methodology</li>
+                        <li>• Readiness for advanced intermediate and upper levels</li>
+                        <li>• Potential for professional development in classical ballet</li>
+                    </ul>
+
+                    <h2>Future Advancement</h2>
+                    <p>
+                        This Grade 1 distinction establishes readiness for progression to Grades 2 and 3, which involve increasingly sophisticated technique including pointe work, complex variations, and advanced artistic interpretation. The strong foundation built through three years of distinction-level performance continues to enhance all aspects of dance practice and provides excellent preparation for advanced ballet training and potential professional opportunities.
+                    </p>
+
+                </div>
+                <div class="col-md-4">
+                    <h2>Examination Details</h2>
+                    <ul>
+                        <li><strong>Date:</strong> October 2025</li>
+                        <li><strong>Venue:</strong> Russian Center, Colombo</li>
+                        <li><strong>Level:</strong> Grade 1</li>
+                        <li><strong>Result:</strong> Distinction</li>
+                        <li><strong>Institution:</strong> Russian School of Ballet & Dancing (Est. 2001)</li>
+                        <li><strong>Patron:</strong> Dr. Oxana Karnovich, Moscow State Academy of Choreography</li>
+                        <li><strong>Instructor:</strong> Mr. Kayan Ruppegoda, KBA Ballet Academy</li>
+                        <li><strong>Director:</strong> Maria Popova, Russian Centre in Colombo</li>
+                        <li><strong>Methodology:</strong> Russian Ballet System</li>
+                        <li><strong>Category:</strong> Classical Ballet</li>
+                    </ul>
+
+                    <h3 class="mt-4">Skills Assessed</h3>
+                    <ul>
+                        <li>• Advanced Ballet Technique</li>
+                        <li>• Complex Barre Work</li>
+                        <li>• Center Combinations</li>
+                        <li>• Pirouettes & Turns</li>
+                        <li>• Grand Allegro</li>
+                        <li>• Musicality & Dynamics</li>
+                        <li>• Artistic Expression</li>
+                        <li>• Performance Quality</li>
+                    </ul>
+
+                    <h3 class="mt-4">Career Progression</h3>
+                    <ul>
+                        <li>🥇 <strong>2023:</strong> Primary - Distinction</li>
+                        <li>🥇 <strong>2024:</strong> Pre Grade - Distinction</li>
+                        <li>🥇 <strong>2025:</strong> Grade 1 - Distinction</li>
+                    </ul>
+
+                    <h3 class="mt-4">Key Achievements</h3>
+                    <ul>
+                        <li>• Three consecutive distinctions</li>
+                        <li>• Three-year progression</li>
+                        <li>• International recognition</li>
+                        <li>• Moscow Academy patronage</li>
+                        <li>• Intermediate level achieved</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS (Optional if you only need basic layout) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

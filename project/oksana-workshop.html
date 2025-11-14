@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Russian Classical Ballet Workshop - Project Detail</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Roboto+Mono:wght@300;400;500&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        :root {
+            --primary-color: #6366f1;
+            --secondary-color: #8b5cf6;
+            --accent-color: #06b6d4;
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --elegant-glow: 0 0 15px rgba(99, 102, 241, 0.3), 0 0 30px rgba(99, 102, 241, 0.15);
+            --font-base: 'Poppins', sans-serif;
+            --font-header: 'Orbitron', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(to bottom, #0f172a, #1e293b);
+            color: #e2e8f0;
+            font-family: var(--font-base);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: var(--font-header);
+            color: var(--accent-color);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            line-height: 1.3;
+        }
+        
+        h1 {
+            font-size: clamp(1.75rem, 4vw, 2.5rem);
+            margin-bottom: 1.5rem;
+        }
+        
+        h2 {
+            font-size: clamp(1.5rem, 3.5vw, 2rem);
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        h3 {
+            font-size: clamp(1.25rem, 3vw, 1.5rem);
+            margin-top: 1.5rem;
+        }
+        
+        p {
+            font-size: clamp(0.9rem, 2vw, 1rem);
+            line-height: 1.6;
+        }
+
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--secondary-color);
+        }
+
+        .glass-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            border-radius: 15px;
+            padding: clamp(1rem, 3vw, 2rem);
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-neon {
+            background: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            text-shadow: 0 0 10px rgba(99, 102, 241, 0.5);
+            box-shadow: 0 0 20px rgba(99, 102, 241, 0.2);
+            padding: 0.75rem 1.5rem;
+            min-height: 48px;
+            min-width: 120px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .btn-neon:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: scale(1.05);
+            box-shadow: var(--elegant-glow);
+        }
+
+        /* Navigation */
+        .navbar {
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--glass-border);
+            padding: 1rem 0;
+        }
+        
+        .navbar-brand {
+            font-size: clamp(1rem, 2.5vw, 1.25rem);
+            padding: 0.5rem 1rem;
+            min-height: 44px;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        /* For a more detailed project page, consider a wider layout */
+        .container {
+            max-width: 960px;
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+
+        /* Image styling */
+        .img-fluid.rounded {
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+            width: 100%;
+            height: auto;
+        }
+
+        /* List Styling */
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        li {
+            margin-bottom: 0.75rem;
+            font-size: clamp(0.9rem, 2vw, 1rem);
+            line-height: 1.6;
+        }
+        
+        li strong {
+            color: var(--accent-color);
+        }
+
+        /* Responsive adjustments */
+        
+        /* Tablets and below */
+        @media (max-width: 992px) {
+            .container {
+                padding-left: 1.5rem;
+                padding-right: 1.5rem;
+            }
+        }
+        
+        /* Mobile devices */
+        @media (max-width: 768px) {
+            body {
+                padding-top: 60px;
+            }
+            
+            .container {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+
+            .glass-card {
+                padding: 1.5rem 1rem;
+            }
+            
+            .row {
+                margin-left: 0;
+                margin-right: 0;
+            }
+            
+            .col-md-8, .col-md-4 {
+                padding-left: 0;
+                padding-right: 0;
+                margin-bottom: 2rem;
+            }
+            
+            h1 {
+                font-size: 1.75rem;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+                margin-top: 1.5rem;
+            }
+            
+            h3 {
+                font-size: 1.25rem;
+                margin-top: 1rem;
+            }
+            
+            .btn-neon {
+                width: 100%;
+                max-width: 100%;
+            }
+        }
+        
+        /* Small phones */
+        @media (max-width: 480px) {
+            .container {
+                padding-left: 0.75rem;
+                padding-right: 0.75rem;
+            }
+            
+            .glass-card {
+                padding: 1rem 0.75rem;
+                border-radius: 10px;
+            }
+            
+            h1 {
+                font-size: 1.5rem;
+                letter-spacing: 0.03em;
+            }
+            
+            h2 {
+                font-size: 1.25rem;
+            }
+            
+            .btn-neon {
+                padding: 0.6rem 1rem;
+                font-size: 0.85rem;
+            }
+        }
+        
+        /* Touch device optimizations */
+        @media (hover: none) and (pointer: coarse) {
+            .btn-neon:hover {
+                transform: none;
+            }
+            
+            .btn-neon:active {
+                transform: scale(0.97);
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Navigation (Simplified for Project Page) -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">Back to Portfolio</a>
+        </div>
+    </nav>
+
+    <div class="container py-5">
+        <div class="glass-card">
+            <h1 class="mb-4">Russian Classical Ballet Workshop 2025</h1>
+
+            <div class="row">
+                <div class="col-md-8">
+                    <img src="../images/oksana_workshop.jpg" alt="Russian Classical Ballet Workshop with Oksana Isaeva" class="img-fluid rounded mb-4">
+
+                    <h2>Workshop Overview</h2>
+                    <p>
+                        Participated in an intensive <strong>Russian Classical Ballet Workshop</strong> conducted by <strong>Ms. Oksana Isaeva</strong> at the <strong>Russian House in Colombo</strong>. This four-day immersive workshop (August 1-4, 2025) provided advanced training in Russian classical ballet methodology, technique refinement, and artistic development under the guidance of an experienced professional ballet instructor.
+                    </p>
+
+                    <h2>About Ms. Oksana Isaeva</h2>
+                    <p>
+                        Ms. Oksana Isaeva is a professional ballet instructor specializing in Russian classical ballet methodology. Her expertise in traditional Russian ballet training techniques provides students with authentic instruction in one of the world's most respected ballet systems. The opportunity to train under Ms. Isaeva offered direct access to Russian ballet pedagogical methods and professional-level training standards.
+                    </p>
+
+                    <h2>Workshop Content and Focus</h2>
+                    <p>
+                        The intensive workshop covered comprehensive aspects of classical Russian ballet training, including:
+                    </p>
+                    <ul>
+                        <li>• Advanced barre work focusing on proper alignment and technique</li>
+                        <li>• Center work with emphasis on port de bras and épaulement</li>
+                        <li>• Classical variations and repertoire training</li>
+                        <li>• Musicality and artistic expression in ballet</li>
+                        <li>• Refinement of technical execution and details</li>
+                        <li>• Russian ballet methodology and teaching principles</li>
+                        <li>• Performance quality and stage presence development</li>
+                    </ul>
+
+                    <h2>Intensive Four-Day Format</h2>
+                    <p>
+                        The workshop's intensive four-day format allowed for deep immersion in Russian ballet training. Daily sessions provided focused attention on technique refinement, with opportunities to receive personalized corrections and guidance. The concentrated schedule enabled significant progress in understanding and executing Russian ballet methodology, building upon existing foundation while introducing new approaches and refinements.
+                    </p>
+
+                    <h2>Russian House in Colombo</h2>
+                    <p>
+                        Held at the prestigious Russian House in Colombo, the workshop benefited from an authentic cultural and educational environment. The Russian House serves as a center for Russian cultural and educational exchange in Sri Lanka, making it an ideal venue for this classical ballet training. The connection to Russian cultural institutions adds authenticity and value to the workshop experience.
+                    </p>
+
+                    <h2>Professional Development Value</h2>
+                    <p>
+                        This workshop provided invaluable exposure to professional-level classical ballet training and Russian pedagogical methods. Training with Ms. Isaeva offered:
+                    </p>
+                    <ul>
+                        <li>• Direct instruction from a professional ballet teacher</li>
+                        <li>• Intensive technique refinement over multiple days</li>
+                        <li>• Exposure to authentic Russian ballet methodology</li>
+                        <li>• Enhanced understanding of classical ballet principles</li>
+                        <li>• Professional development in ballet training</li>
+                        <li>• Connection to Russian ballet tradition and standards</li>
+                    </ul>
+
+                    <h2>Integration with Ongoing Training</h2>
+                    <p>
+                        This workshop complements ongoing Russian ballet examination preparation and training. The intensive focus on Russian methodology reinforces and enhances the technical foundation developed through the Russian ballet graded system. Skills and insights gained from Ms. Isaeva's instruction contribute to continued advancement in classical ballet and preparation for higher-level examinations and performance opportunities.
+                    </p>
+
+                    <h2>Artistic and Technical Growth</h2>
+                    <p>
+                        The workshop experience provided significant artistic and technical development through concentrated training, professional instruction, and immersion in Russian ballet methodology. The opportunity to dedicate four intensive days to ballet training under expert guidance accelerated progress, refined technique, and deepened understanding of classical ballet as an art form. This experience enhances overall dance training and contributes to artistic maturity and technical excellence.
+                    </p>
+
+                </div>
+                <div class="col-md-4">
+                    <h2>Workshop Details</h2>
+                    <ul>
+                        <li><strong>Dates:</strong> August 1-4, 2025</li>
+                        <li><strong>Duration:</strong> 4-Day Intensive</li>
+                        <li><strong>Venue:</strong> Russian House in Colombo</li>
+                        <li><strong>Instructor:</strong> Ms. Oksana Isaeva</li>
+                        <li><strong>Focus:</strong> Russian Classical Ballet</li>
+                        <li><strong>Format:</strong> Intensive Workshop</li>
+                        <li><strong>Level:</strong> Advanced Training</li>
+                    </ul>
+
+                    <h3 class="mt-4">Workshop Focus Areas</h3>
+                    <ul>
+                        <li>• Classical Ballet Technique</li>
+                        <li>• Russian Methodology</li>
+                        <li>• Barre & Center Work</li>
+                        <li>• Classical Variations</li>
+                        <li>• Artistic Expression</li>
+                        <li>• Technical Refinement</li>
+                        <li>• Performance Quality</li>
+                    </ul>
+
+                    <h3 class="mt-4">Skills Developed</h3>
+                    <ul>
+                        <li>• Advanced Ballet Technique</li>
+                        <li>• Russian Training Methods</li>
+                        <li>• Classical Repertoire</li>
+                        <li>• Musicality</li>
+                        <li>• Artistic Maturity</li>
+                        <li>• Professional Standards</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS (Optional if you only need basic layout) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rakus Na - Project Detail</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Roboto+Mono:wght@300;400;500&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        :root {
+            --primary-color: #6366f1;
+            --secondary-color: #8b5cf6;
+            --accent-color: #06b6d4;
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --elegant-glow: 0 0 15px rgba(99, 102, 241, 0.3), 0 0 30px rgba(99, 102, 241, 0.15);
+            --font-base: 'Poppins', sans-serif;
+            --font-header: 'Orbitron', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(to bottom, #0f172a, #1e293b);
+            color: #e2e8f0;
+            font-family: var(--font-base);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: var(--font-header);
+            color: var(--accent-color);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            line-height: 1.3;
+        }
+        
+        h1 {
+            font-size: clamp(1.75rem, 4vw, 2.5rem);
+            margin-bottom: 1.5rem;
+        }
+        
+        h2 {
+            font-size: clamp(1.5rem, 3.5vw, 2rem);
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        h3 {
+            font-size: clamp(1.25rem, 3vw, 1.5rem);
+            margin-top: 1.5rem;
+        }
+        
+        p {
+            font-size: clamp(0.9rem, 2vw, 1rem);
+            line-height: 1.6;
+        }
+
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--secondary-color);
+        }
+
+        .glass-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            border-radius: 15px;
+            padding: clamp(1rem, 3vw, 2rem);
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-neon {
+            background: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            text-shadow: 0 0 10px rgba(99, 102, 241, 0.5);
+            box-shadow: 0 0 20px rgba(99, 102, 241, 0.2);
+            padding: 0.75rem 1.5rem;
+            min-height: 48px;
+            min-width: 120px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .btn-neon:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: scale(1.05);
+            box-shadow: var(--elegant-glow);
+        }
+
+        /* Navigation */
+        .navbar {
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--glass-border);
+            padding: 1rem 0;
+        }
+        
+        .navbar-brand {
+            font-size: clamp(1rem, 2.5vw, 1.25rem);
+            padding: 0.5rem 1rem;
+            min-height: 44px;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        /* For a more detailed project page, consider a wider layout */
+        .container {
+            max-width: 960px;
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+
+        /* Image styling */
+        .img-fluid.rounded {
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+            width: 100%;
+            height: auto;
+        }
+
+        /* List Styling */
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        li {
+            margin-bottom: 0.75rem;
+            font-size: clamp(0.9rem, 2vw, 1rem);
+            line-height: 1.6;
+        }
+        
+        li strong {
+            color: var(--accent-color);
+        }
+
+        /* Responsive adjustments */
+        
+        /* Tablets and below */
+        @media (max-width: 992px) {
+            .container {
+                padding-left: 1.5rem;
+                padding-right: 1.5rem;
+            }
+        }
+        
+        /* Mobile devices */
+        @media (max-width: 768px) {
+            body {
+                padding-top: 60px;
+            }
+            
+            .container {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+
+            .glass-card {
+                padding: 1.5rem 1rem;
+            }
+            
+            .row {
+                margin-left: 0;
+                margin-right: 0;
+            }
+            
+            .col-md-8, .col-md-4 {
+                padding-left: 0;
+                padding-right: 0;
+                margin-bottom: 2rem;
+            }
+            
+            h1 {
+                font-size: 1.75rem;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+                margin-top: 1.5rem;
+            }
+            
+            h3 {
+                font-size: 1.25rem;
+                margin-top: 1rem;
+            }
+            
+            .btn-neon {
+                width: 100%;
+                max-width: 100%;
+            }
+        }
+        
+        /* Small phones */
+        @media (max-width: 480px) {
+            .container {
+                padding-left: 0.75rem;
+                padding-right: 0.75rem;
+            }
+            
+            .glass-card {
+                padding: 1rem 0.75rem;
+                border-radius: 10px;
+            }
+            
+            h1 {
+                font-size: 1.5rem;
+                letter-spacing: 0.03em;
+            }
+            
+            h2 {
+                font-size: 1.25rem;
+            }
+            
+            .btn-neon {
+                padding: 0.6rem 1rem;
+                font-size: 0.85rem;
+            }
+        }
+        
+        /* Touch device optimizations */
+        @media (hover: none) and (pointer: coarse) {
+            .btn-neon:hover {
+                transform: none;
+            }
+            
+            .btn-neon:active {
+                transform: scale(0.97);
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Navigation (Simplified for Project Page) -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">Back to Portfolio</a>
+        </div>
+    </nav>
+
+    <div class="container py-5">
+        <div class="glass-card">
+            <h1 class="mb-4">Rakus Na</h1>
+
+            <div class="row">
+                <div class="col-md-8">
+                    <img src="../images/rakus_na.jpg" alt="Rakus Na Production" class="img-fluid rounded mb-4">
+
+                    <h2>Production Overview</h2>
+                    <p>
+                        <strong>"Rakus Na"</strong> is a contemporary dance production that explores and celebrates Sri Lankan <strong>low country dance tradition</strong> (Pahatharata Natum). This 2025 production brings traditional dance forms from the southern coastal regions of Sri Lanka to the modern stage, honoring cultural heritage while creating new artistic expressions rooted in ancestral movement vocabulary.
+                    </p>
+
+                    <h2>Low Country Dance Tradition</h2>
+                    <p>
+                        Low country dance (Pahatharata Natum) is one of Sri Lanka's three major classical dance traditions, originating from the southern coastal regions. This dance form is characterized by:
+                    </p>
+                    <ul>
+                        <li>• <strong>Ritualistic Origins:</strong> Connected to healing rituals and folk ceremonies</li>
+                        <li>• <strong>Energetic Movements:</strong> Dynamic, earth-connected footwork and rhythmic patterns</li>
+                        <li>• <strong>Cultural Significance:</strong> Preserving centuries-old traditions from coastal communities</li>
+                        <li>• <strong>Distinctive Drumming:</strong> Accompanied by traditional low country drums (Yak Beraya)</li>
+                        <li>• <strong>Character Masks:</strong> Often performed with elaborate masks representing various characters</li>
+                        <li>• <strong>Storytelling:</strong> Narrative elements drawn from folklore and mythology</li>
+                    </ul>
+
+                    <h2>Artistic Vision of "Rakus Na"</h2>
+                    <p>
+                        "Rakus Na" translates to concepts of protection, guardianship, and spiritual defense in Sinhala, reflecting the protective ritualistic origins of low country dance. The production explores these themes while creating a bridge between traditional practice and contemporary performance, demonstrating how ancient dance forms remain relevant and powerful in modern contexts.
+                    </p>
+
+                    <h2>Choreographic Approach</h2>
+                    <p>
+                        The choreography honors traditional low country dance vocabulary while incorporating contemporary staging, lighting, and narrative structure. Key elements include:
+                    </p>
+                    <ul>
+                        <li>• Authentic low country dance movements and rhythms</li>
+                        <li>• Traditional footwork patterns and body articulations</li>
+                        <li>• Contemporary theatrical interpretation</li>
+                        <li>• Integration of traditional and modern performance aesthetics</li>
+                        <li>• Exploration of ritual and ceremony through movement</li>
+                        <li>• Preservation of cultural authenticity while creating new work</li>
+                    </ul>
+
+                    <h2>Cultural and Artistic Significance</h2>
+                    <p>
+                        This production represents important work in cultural preservation and innovation. By creating new choreography rooted in low country dance tradition, "Rakus Na" contributes to keeping these cultural practices alive and relevant for contemporary audiences. The production demonstrates how traditional dance forms can evolve and adapt while maintaining their essential character and cultural significance.
+                    </p>
+
+                    <h2>Training and Preparation</h2>
+                    <p>
+                        Performing low country dance requires specialized training in this specific tradition, including:
+                    </p>
+                    <ul>
+                        <li>• Mastery of low country dance technique and vocabulary</li>
+                        <li>• Understanding of rhythmic patterns and traditional drum cycles</li>
+                        <li>• Connection to the cultural and ritualistic context</li>
+                        <li>• Physical stamina for the demanding, energetic movements</li>
+                        <li>• Knowledge of traditional stories and characters</li>
+                        <li>• Ability to integrate tradition with contemporary expression</li>
+                    </ul>
+
+                    <h2>Performance Experience</h2>
+                    <p>
+                        Participating in "Rakus Na" provided the opportunity to engage deeply with Sri Lankan cultural heritage through dance. The experience of embodying low country dance tradition while contributing to new choreographic work created a meaningful connection to ancestral art forms and their continuing evolution. This production showcases commitment to cultural preservation alongside artistic innovation.
+                    </p>
+
+                    <h2>Contemporary Relevance</h2>
+                    <p>
+                        "Rakus Na" demonstrates how traditional dance forms continue to speak to contemporary experiences and audiences. By bringing low country dance to the modern stage with professional production values and contemporary framing, the work introduces younger generations and diverse audiences to this important cultural tradition while maintaining respect for its origins and significance.
+                    </p>
+
+                    <h2>Contribution to Artistic Profile</h2>
+                    <p>
+                        This production adds an important dimension to artistic work, demonstrating versatility across multiple dance traditions—from Western classical ballet to contemporary dance to traditional Sri Lankan forms. The ability to work authentically within low country dance tradition while also performing in international styles showcases comprehensive dance training and cultural awareness.
+                    </p>
+
+                </div>
+                <div class="col-md-4">
+                    <h2>Production Details</h2>
+                    <ul>
+                        <li><strong>Year:</strong> 2025</li>
+                        <li><strong>Production:</strong> Rakus Na</li>
+                        <li><strong>Dance Tradition:</strong> Low Country Dance (Pahatharata Natum)</li>
+                        <li><strong>Genre:</strong> Traditional/Contemporary Fusion</li>
+                        <li><strong>Origin:</strong> Southern Sri Lanka</li>
+                        <li><strong>Format:</strong> Theatrical Production</li>
+                        <li><strong>Cultural Context:</strong> Sri Lankan Heritage</li>
+                    </ul>
+
+                    <h3 class="mt-4">Dance Elements</h3>
+                    <ul>
+                        <li>• Low Country Technique</li>
+                        <li>• Traditional Footwork</li>
+                        <li>• Rhythmic Patterns</li>
+                        <li>• Cultural Movements</li>
+                        <li>• Ritualistic Elements</li>
+                        <li>• Storytelling</li>
+                    </ul>
+
+                    <h3 class="mt-4">Skills Demonstrated</h3>
+                    <ul>
+                        <li>• Traditional Dance Mastery</li>
+                        <li>• Cultural Understanding</li>
+                        <li>• Rhythmic Precision</li>
+                        <li>• Physical Stamina</li>
+                        <li>• Theatrical Performance</li>
+                        <li>• Heritage Preservation</li>
+                    </ul>
+
+                    <h3 class="mt-4">Key Themes</h3>
+                    <ul>
+                        <li>• Cultural Heritage</li>
+                        <li>• Protection & Guardianship</li>
+                        <li>• Tradition & Innovation</li>
+                        <li>• Ritualistic Expression</li>
+                        <li>• Community Connection</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS (Optional if you only need basic layout) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

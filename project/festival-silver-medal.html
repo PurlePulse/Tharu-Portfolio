@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sri Lanka Festival Silver Medal - Project Detail</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Roboto+Mono:wght@300;400;500&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        :root {
+            --primary-color: #6366f1;
+            --secondary-color: #8b5cf6;
+            --accent-color: #06b6d4;
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --elegant-glow: 0 0 15px rgba(99, 102, 241, 0.3), 0 0 30px rgba(99, 102, 241, 0.15);
+            --font-base: 'Poppins', sans-serif;
+            --font-header: 'Orbitron', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(to bottom, #0f172a, #1e293b);
+            color: #e2e8f0;
+            font-family: var(--font-base);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: var(--font-header);
+            color: var(--accent-color);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            line-height: 1.3;
+        }
+        
+        h1 {
+            font-size: clamp(1.75rem, 4vw, 2.5rem);
+            margin-bottom: 1.5rem;
+        }
+        
+        h2 {
+            font-size: clamp(1.5rem, 3.5vw, 2rem);
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        h3 {
+            font-size: clamp(1.25rem, 3vw, 1.5rem);
+            margin-top: 1.5rem;
+        }
+        
+        p {
+            font-size: clamp(0.9rem, 2vw, 1rem);
+            line-height: 1.6;
+        }
+
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--secondary-color);
+        }
+
+        .glass-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            border-radius: 15px;
+            padding: clamp(1rem, 3vw, 2rem);
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-neon {
+            background: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            text-shadow: 0 0 10px rgba(99, 102, 241, 0.5);
+            box-shadow: 0 0 20px rgba(99, 102, 241, 0.2);
+            padding: 0.75rem 1.5rem;
+            min-height: 48px;
+            min-width: 120px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .btn-neon:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: scale(1.05);
+            box-shadow: var(--elegant-glow);
+        }
+
+        /* Navigation */
+        .navbar {
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--glass-border);
+            padding: 1rem 0;
+        }
+        
+        .navbar-brand {
+            font-size: clamp(1rem, 2.5vw, 1.25rem);
+            padding: 0.5rem 1rem;
+            min-height: 44px;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        /* For a more detailed project page, consider a wider layout */
+        .container {
+            max-width: 960px;
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+
+        /* Image styling */
+        .img-fluid.rounded {
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+            width: 100%;
+            height: auto;
+        }
+
+        /* Badge styling */
+        .achievement-badge {
+            background: linear-gradient(135deg, #c0c0c0, #e8e8e8);
+            color: #1a1a1a;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            display: inline-block;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            box-shadow: 0 0 15px rgba(192, 192, 192, 0.4);
+        }
+
+        .progression-badge {
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: white;
+            padding: 0.35rem 0.85rem;
+            border-radius: 20px;
+            display: inline-block;
+            font-weight: 600;
+            margin-left: 0.5rem;
+            font-size: 0.85rem;
+        }
+
+        /* List Styling */
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        li {
+            margin-bottom: 0.75rem;
+            font-size: clamp(0.9rem, 2vw, 1rem);
+            line-height: 1.6;
+        }
+        
+        li strong {
+            color: var(--accent-color);
+        }
+
+        /* Responsive adjustments */
+        
+        /* Tablets and below */
+        @media (max-width: 992px) {
+            .container {
+                padding-left: 1.5rem;
+                padding-right: 1.5rem;
+            }
+        }
+        
+        /* Mobile devices */
+        @media (max-width: 768px) {
+            body {
+                padding-top: 60px;
+            }
+            
+            .container {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+
+            .glass-card {
+                padding: 1.5rem 1rem;
+            }
+            
+            .row {
+                margin-left: 0;
+                margin-right: 0;
+            }
+            
+            .col-md-8, .col-md-4 {
+                padding-left: 0;
+                padding-right: 0;
+                margin-bottom: 2rem;
+            }
+            
+            h1 {
+                font-size: 1.75rem;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+                margin-top: 1.5rem;
+            }
+            
+            h3 {
+                font-size: 1.25rem;
+                margin-top: 1rem;
+            }
+            
+            .btn-neon {
+                width: 100%;
+                max-width: 100%;
+            }
+
+            .progression-badge {
+                display: block;
+                margin-left: 0;
+                margin-top: 0.5rem;
+                text-align: center;
+            }
+        }
+        
+        /* Small phones */
+        @media (max-width: 480px) {
+            .container {
+                padding-left: 0.75rem;
+                padding-right: 0.75rem;
+            }
+            
+            .glass-card {
+                padding: 1rem 0.75rem;
+                border-radius: 10px;
+            }
+            
+            h1 {
+                font-size: 1.5rem;
+                letter-spacing: 0.03em;
+            }
+            
+            h2 {
+                font-size: 1.25rem;
+            }
+            
+            .btn-neon {
+                padding: 0.6rem 1rem;
+                font-size: 0.85rem;
+            }
+        }
+        
+        /* Touch device optimizations */
+        @media (hover: none) and (pointer: coarse) {
+            .btn-neon:hover {
+                transform: none;
+            }
+            
+            .btn-neon:active {
+                transform: scale(0.97);
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Navigation (Simplified for Project Page) -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">Back to Portfolio</a>
+        </div>
+    </nav>
+
+    <div class="container py-5">
+        <div class="glass-card">
+            <span class="achievement-badge">🥈 Silver Medal Winner</span>
+            <span class="progression-badge">⬆️ Upgraded from Bronze</span>
+            <h1 class="mb-4">Sri Lanka Festival - Modern Dance Solo</h1>
+
+            <div class="row">
+                <div class="col-md-8">
+                    <img src="../images/festival_silver_medal.jpg" alt="Sri Lanka Festival Silver Medal" class="img-fluid rounded mb-4">
+
+                    <h2>Achievement Overview</h2>
+                    <p>
+                        Awarded the <strong>Silver Medal (Commended)</strong> in Modern Dance Solo at the <strong>27th Annual Sri Lanka Festival of Music, Dance, and Speech</strong> in 2024. This achievement represents significant advancement from the Bronze Medal in 2023, demonstrating improved competitive performance and artistic growth in a different dance discipline.
+                    </p>
+                    <p>
+                        Presented by <strong>Mr. R. G. Gayan Shamila Ruppegoda</strong> from <strong>Kurunagala Ballet Academy</strong>. The festival is affiliated to the <strong>British and International Federation of Festivals for Music, Dance & Speech - UK</strong>, providing international recognition and standard.
+                    </p>
+
+                    <h2>Competitive Progression: Bronze to Silver</h2>
+                    <p>
+                        This silver medal represents remarkable competitive improvement:
+                    </p>
+                    <ul>
+                        <li>• <strong>2023:</strong> Bronze Medal - Classical Ballet Solo (26th Festival)</li>
+                        <li>• <strong>2024:</strong> Silver Medal - Modern Dance Solo (27th Festival)</li>
+                    </ul>
+                    <p>
+                        Advancing from bronze to silver in consecutive years demonstrates dedication to competitive excellence, artistic development, and ability to apply skills across different dance styles. Competing successfully in both classical ballet and modern dance showcases versatility and comprehensive dance training.
+                    </p>
+
+                    <h2>Modern Dance Solo Category</h2>
+                    <p>
+                        The Modern Dance Solo category requires different technical and artistic skills from classical ballet, including:
+                    </p>
+                    <ul>
+                        <li>• Contemporary movement vocabulary and technique</li>
+                        <li>• Creative interpretation and personal expression</li>
+                        <li>• Dynamic use of space and floor work</li>
+                        <li>• Emotional authenticity and storytelling</li>
+                        <li>• Flexibility in style and movement quality</li>
+                        <li>• Strong technical foundation combined with artistic freedom</li>
+                    </ul>
+
+                    <h2>About the 27th Annual Festival</h2>
+                    <p>
+                        The 2024 festival marked the 27th year of this prestigious competition, continuing its legacy of promoting excellence in performing arts across Sri Lanka. Held in <strong>Polgahawela</strong>, the festival attracts talented performers from across the country. The event's affiliation with the British and International Federation of Festivals ensures international standards and recognition for all achievements.
+                    </p>
+
+                    <h2>Competition Preparation</h2>
+                    <p>
+                        Preparation for the modern dance solo required developing a unique choreographic work that showcased contemporary technique while expressing personal artistic vision. Training under Mr. Gayan Ruppegoda at Kurunagala Ballet Academy provided expert guidance in contemporary movement, allowing for the development of a competitive solo that demonstrated technical skill and artistic maturity. The preparation process included refining choreography, developing performance quality, and building confidence in a different movement style from the previous year's classical ballet.
+                    </p>
+
+                    <h2>Significance of Silver Medal</h2>
+                    <p>
+                        Earning a silver medal at the national level represents:
+                    </p>
+                    <ul>
+                        <li>• Improved competitive standing from previous year</li>
+                        <li>• Recognition of growth and development as a performer</li>
+                        <li>• Versatility across classical and contemporary dance styles</li>
+                        <li>• Commitment to competitive excellence</li>
+                        <li>• International standard recognition through UK affiliation</li>
+                    </ul>
+
+                    <h2>International Recognition</h2>
+                    <p>
+                        The festival's affiliation with the British and International Federation of Festivals for Music, Dance & Speech - UK adds significant value to this achievement, providing international recognition and ensuring that judging standards meet global criteria for performing arts competitions.
+                    </p>
+
+                    <h2>Impact on Artistic Development</h2>
+                    <p>
+                        This silver medal achievement, combined with the previous bronze medal, demonstrates consistent competitive success and artistic growth. The experience of competing in both classical ballet and modern dance has developed versatility, performance confidence, and ability to adapt to different stylistic demands. These competitive achievements complement examination-based progression and contribute to a well-rounded artistic profile.
+                    </p>
+
+                </div>
+                <div class="col-md-4">
+                    <h2>Competition Details</h2>
+                    <ul>
+                        <li><strong>Year:</strong> 2024</li>
+                        <li><strong>Festival:</strong> 27th Annual Sri Lanka Festival of Music, Dance, and Speech</li>
+                        <li><strong>Location:</strong> Polgahawela</li>
+                        <li><strong>Category:</strong> Modern Dance Solo (26 yrs & over)</li>
+                        <li><strong>Achievement:</strong> Silver Medal (Commended)</li>
+                        <li><strong>Competition Level:</strong> National</li>
+                        <li><strong>Presenter:</strong> Mr. R. G. Gayan Shamila Ruppegoda</li>
+                        <li><strong>Academy:</strong> Kurunagala Ballet Academy</li>
+                        <li><strong>Affiliation:</strong> British and International Federation of Festivals - UK</li>
+                    </ul>
+
+                    <h3 class="mt-4">Skills Demonstrated</h3>
+                    <ul>
+                        <li>• Contemporary Dance Technique</li>
+                        <li>• Modern Movement</li>
+                        <li>• Creative Choreography</li>
+                        <li>• Artistic Expression</li>
+                        <li>• Performance Confidence</li>
+                        <li>• Competitive Excellence</li>
+                    </ul>
+
+                    <h3 class="mt-4">Competitive Journey</h3>
+                    <ul>
+                        <li>🥉 <strong>2023:</strong> Bronze - Ballet Solo</li>
+                        <li>🥈 <strong>2024:</strong> Silver - Modern Dance</li>
+                    </ul>
+
+                    <h3 class="mt-4">Key Achievements</h3>
+                    <ul>
+                        <li>• Upgraded from Bronze to Silver</li>
+                        <li>• Two consecutive years</li>
+                        <li>• Cross-style versatility</li>
+                        <li>• International affiliation</li>
+                        <li>• National recognition</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS (Optional if you only need basic layout) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
